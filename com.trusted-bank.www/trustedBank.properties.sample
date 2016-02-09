@@ -1,0 +1,61 @@
+# active system selector
+com.verisign.active=production
+#com.verisign.active=pilot
+#com.verisign.active=partner
+
+# generics
+com.verisign.version=2.0
+com.verisign.nonce=abcd123
+
+# production
+# dev db path=/amutu/usr/data/db/trustedbank
+com.verisign.webservice.production.db.path=/home/trustedbank/prodTokenDB
+com.verisign.webservice.production.url=https://vipservices-auth.verisign.com
+com.verisign.webservice.production.cert.file=/home/trustedbank/vipCertExp12292016.p12
+com.verisign.webservice.production.cert.password=Password1
+
+# pilot
+com.verisign.webservice.pilot.db.path=/home/trustedbank/pilotTokenDB
+com.verisign.webservice.pilot.url=https://pilot-vipservices-auth.verisign.com
+com.verisign.webservice.pilot.cert.file=/home/trustedbank/pilotSE.p12
+com.verisign.webservice.pilot.cert.password=password1
+
+# partner
+# dev db path=/app/apache-tomcat/db/tokenDB
+com.verisign.webservice.partner.db.path=/home/trustedbank/partnerTokenDB
+com.verisign.webservice.partner.url=https://ptnr-vipservices-auth.bbtest.net
+com.verisign.webservice.partner.cert.file=/app/apache-tomcat/keys/cert.p12
+com.verisign.webservice.partner.cert.password=password
+
+# IDology
+com.idologylive.url=https://web.idologylive.com/
+com.idologylive.id=vdemoapi
+com.idologylive.password=verisign1234
+
+# Preview DB
+com.verisign.webservice.preview.db.path=/home/trustedbank/previewTokenDB
+
+# VIP User Services
+com.symantec.webservice.management.production.url=https://userservices-auth.vip.symantec.com/vipuserservices/ManagementService_1_3
+com.symantec.webservice.authentication.production.url=https://userservices-auth.vip.symantec.com/vipuserservices/AuthenticationService_1_3
+com.symantec.webservice.query.production.url=https://userservices-auth.vip.symantec.com/vipuserservices/QueryService_1_3
+
+# VIP Push
+# Authentication
+com.symantec.webservice.authentication.push.auth.push.message.text=Sign-in in request from TrustedBank 
+com.symantec.webservice.authentication.push.auth.request.timeout=120
+com.symantec.webservice.authentication.push.auth.display.message.title=TrustedBank Login
+com.symantec.webservice.authentication.push.auth.display.message.text=This is a Login request from the TrustedBank website
+com.symantec.webservice.authentication.push.auth.display.message.profile=www.trusted-bank.com
+# Transaction verification
+com.symantec.webservice.authentication.push.txn.push.message.text=Verification request from TrustedBank
+com.symantec.webservice.authentication.push.txn.request.timeout=120
+com.symantec.webservice.authentication.push.txn.display.message.title=TrustedBank Verification
+com.symantec.webservice.authentication.push.txn.display.message.text.from=Transaction initiated from acct. *
+com.symantec.webservice.authentication.push.txn.display.message.text.to=to acct. *
+com.symantec.webservice.authentication.push.txn.display.message.text.amount=for the amount of
+com.symantec.webservice.authentication.push.txn.display.message.text.confirm=. Please Approve if correct.
+com.symantec.webservice.authentication.push.txn.display.message.profile=www.trusted-bank.com
+# Status poll 
+com.symantec.webservice.query.push.poll.retries=5
+com.symantec.webservice.query.push.poll.sleep=8000
