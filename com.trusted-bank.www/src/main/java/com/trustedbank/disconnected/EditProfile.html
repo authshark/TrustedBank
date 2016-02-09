@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:wicket="http://wicket.sourceforge.net/">
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+        <link media="screen" rel="stylesheet" type="text/css" href="console.css"/>
+    <title>Edit Profile</title>
+</head>
+
+<body>
+<wicket:extend>
+<table width="700" border="0" cellpadding="0" cellspacing="0">
+<tr>
+            <td width="180" valign="top" class="sideback">
+            	<span wicket:id="loginSidebarPanel"/>
+            </td>
+<td width="10">&nbsp;</td>
+<td width="510" valign="top" class="infotext">
+    <span class="pageTitle">Edit Profile</span>
+    <br/>
+    
+    <br/>
+    Edit your profile and click <strong>Submit</strong> to proceed.<br/><br/>
+
+    <table width="510" border="0" cellpadding="0" cellspacing="0" class="gentable">
+        <tr class="gentable-head">
+            <td align="left" colspan="2" class="gentable-head">Security Questions</td>
+        </tr>
+        <c:forEach items="${profileForm.map.answers}" var="answers"
+                   varStatus="item">
+            <c:choose>
+                <c:when test="${item.count % 2 == 0}">
+                    <tr class="gentable-even">
+                </c:when>
+                <c:otherwise>
+                    <tr class="gentable-odd">
+                </c:otherwise>
+            </c:choose>
+                <td align="right" class="gentable-border" width="23%"><strong>Question <c:out
+                        value="${item.count}"/>:</strong></td>
+                <td align="left" class="gentable-border" width="77%"><html:select property="answers[${item.index}].questionId" style="width:340px;">
+                    <html:option value="">--- Select a question ---</html:option>
+                    <html:optionsCollection name="questions" label="question"
+                                            value="questionId"/>
+                </html:select></td>
+            </tr>
+            <c:choose>
+                <c:when test="${item.count % 2 == 0}">
+                    <tr class="gentable-even">
+                </c:when>
+                <c:otherwise>
+                    <tr class="gentable-odd">
+                </c:otherwise>
+            </c:choose>
+                <td align="right" class="gentable-border">Answer <c:out
+                        value="${item.count}"/>:</td>
+                <td align="left" class="gentable-border"><html:text name="answers" property="answer" indexed="true"
+                               size="55"/></td>
+            </tr>
+        </c:forEach>
+    </table>
+    <br/>
+    <table width="510" border="0" cellpadding="0" cellspacing="0" class="gentable">
+        <tr class="gentable-head">
+            <td align="left" colspan="2" class="gentable-head">Phone Numbers</td>
+        </tr>
+        <tr class="gentable-odd">
+            <td align="right" class="gentable-border" width="23%"><strong>Home Phone:</strong></td>
+            <td align="left" class="gentable-border" width="77%"><html:text property="homePhone" size="15"/></td>
+        </tr>
+        <tr class="gentable-even">
+            <td align="right" class="gentable-border" width="23%"><strong>Work Phone:</strong></td>
+            <td align="left" class="gentable-border" width="77%"><html:text property="workPhone" size="15"/></td>
+        </tr>
+        <tr class="gentable-odd">
+            <td align="right" class="gentable-border" width="23%"><strong>Mobile Phone:</strong></td>
+            <td align="left" class="gentable-border" width="77%"><html:text property="mobilePhone" size="15"/></td>
+        </tr>
+    </table>
+    <br/>
+    <table width="510" border="0" cellpadding="0" cellspacing="0" class="gentable">
+        <tr class="gentable-head">
+            <td align="left" colspan="2" class="gentable-head">E-mail</td>
+        </tr>
+        <tr class="gentable-odd">
+            <td align="right" class="gentable-border" width="23%"><strong>E-mail address:</strong></td>
+            <td align="left" class="gentable-border" width="77%"><input type="text" name="email" size="55"/></td>
+        </tr>
+    </table>
+    <br/>
+    <table width="510" border="0" cellpadding="0" cellspacing="0" class="gentable">
+        <tr class="gentable-head">
+            <td align="left" colspan="2" class="gentable-head">Challenge type</td>
+        </tr>
+        <tr class="gentable-even">
+            <td align="left" colspan="2" class="gentable-border"><b>Please select the alternative methods that we can
+            use for authentication.</b></td>
+        </tr>
+        <c:forEach items="${requestScope.types}" var="type" varStatus="status">
+            <c:choose>
+                <c:when test="${status.count % 2 == 0}">
+                    <tr class="gentable-even">
+                </c:when>
+                <c:otherwise>
+                    <tr class="gentable-odd">
+                </c:otherwise>
+            </c:choose>
+            <td align="right" class="gentable-border" width="23%"><html:multibox property="challenge_type"><c:out value="${type.value}"/></html:multibox></td>
+            <td align="left" class="gentable-border" width="77%"><strong><c:out value="${type.label}"/></strong></td>
+        </tr>
+        </c:forEach>
+    </table>
+    <br/>
+
+    <div align="center">
+    <html:submit value="Submit" styleClass="regButton"/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="image/vip-white.jpg"/></div>
+</td>
+
+</tr>
+</table>
+<br/>
+<script>document.getElementById("menu").style.display =
+        "block";MM_nbGroup('down', 'navbar1', 'menu_r1_c11', 'image/menu/menu_r1_c11_f3.jpg', 1);</script>
+</wicket:extend>
+</body>
+</html>

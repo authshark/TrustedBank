@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:wicket="http://wicket.sourceforge.net/">
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+        <link media="screen" rel="stylesheet" type="text/css" href="console.css"/>
+    <title>Account Created</title>
+</head>
+
+<body>
+<wicket:extend>
+    <table width="700" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+            <td width="180" valign="top" class="sideback">
+            	<span wicket:id="loginSidebarPanel"/>
+            </td>
+            <td width="10">&nbsp;</td>
+            <td width="510" valign="top" class="infotext">
+                <span class="pageTitle">Account Successfully Created</span>
+                <br/>
+                <br/>
+                Thank you for selecting Trusted Bank.  Your username is shown below.
+                <br/><br/><br/>
+                <div align="center">
+					<strong>Username:</strong>&nbsp;&nbsp;<span wicket:id = "username">My Username</span>
+					<br/>
+					<h4>VeriSign Identity Protection: Not Protected</h4>
+					<br/>
+					The VeriSign Identity Protection (VIP) service provides an additional layer of security.
+					<br/> 
+					The <a href="https://idprotect.verisign.com/orderstart.v" target="_blank" title="VeriSign Identity Protection">VIP Credential</a>
+					is a second factor of authentication, besides your password. With a registered VIP Credential, generate a one-time security code 
+					and enter it when prompted after submitting your existing user login and password.	
+					<br/><br/><br/><br/><br/><br/>				
+					<a href="https://idprotect.verisign.com/orderstart.v" target="_blank"><img src="/image/vip-small-help.jpg" border="0" alt title="Example User Tokens" /></a>
+					<br/><br/><br/><br/><br/><br/>
+					If you have a VIP Credential, please register it to begin using enhanced security.
+					Click on the button below and select the "Add VIP Credential" link from your profile settings. 
+					<br/><br/><br/><br/>
+					<input type="button" class="regButton" wicket:id="goToProfile" value="Continue" />
+				</div>
+			</td>
+		</tr>
+	</table>
+</wicket:extend>
+</body>
+</html>

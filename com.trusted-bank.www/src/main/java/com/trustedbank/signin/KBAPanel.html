@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.sourceforge.net/">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<link media="screen" rel="stylesheet" type="text/css" href="console.css" />
+<title>KBA Panel</title>
+</head>
+<body>
+	<wicket:panel>
+		<form name="form" wicket:id="enterKBAForm"">
+			<table border="0" cellpadding="0">
+				<tr>
+					<td class="infotext" align="right">
+						<strong>Last 4 digits of SSN:</strong>
+					</td>
+                    <td class="infotext">
+                    	<input type="text" 
+                    		id="inputSSN"
+                    		size="20" 
+                    		maxlength="20"
+                    		onkeypress="handleEnterKey(event,this.form.signin)" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="infotext" align="right">
+                    	<strong>Last Mortgage Payment:</strong>
+                    </td>
+                    <td class="infotext">
+                    	<input type="text" 
+                    		size="20" 
+                    		maxlength="20"
+                    		onkeypress="handleEnterKey(event,this.form.signin)" />
+                    </td>
+                </tr>
+				<tr>
+					<td align="right" colspan="2" valign="middle">
+					<input type="submit"
+						name="signin" 
+						id="signin" 
+						value="Validate" 
+						class="regButton"
+						onkeypress="handleEnterKey(event,this.form.signin)" />
+					</td>
+				</tr>
+			</table>
+		</form>
+		<span class="xtrasmtxt" wicket:id="feedback"/>
+	</wicket:panel>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.sourceforge.net/">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<link media="screen" rel="stylesheet" type="text/css"
+	href="console.css" />
+<title>Sign Up Panel</title>
+</head>
+<body>
+	<wicket:panel>
+		<form name="form" wicket:id="signUpForm"> 
+	        <br/> 
+	        To complete your account enrollment, please enter a username and a password below.
+	        <br/>
+	        <br/>
+	        <table border="0" cellpadding="2" cellspacing="0" width="330">
+                <tr>
+                    <td class="infotext" align="left" width="125">
+                    	<strong>Username:</strong>&nbsp;&nbsp;
+                    </td>
+                    <td><input type="text" 
+                    		wicket:id="username"
+                            property="username" 
+                            style="width:195px"
+                            id="username"
+                            onkeypress="handleEnterKey(event,this.form.signin)"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="infotext" align="left">
+                    	<strong>Password:</strong>&nbsp;&nbsp;
+                    </td>
+                    <td><input type="password" 
+                    		wicket:id="password"
+                            property="password" 
+                            style="width:195px"
+                            onkeypress="handleEnterKey(event,this.form.signin)"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="infotext" align="left">
+                    	<strong>Confirm Password:</strong>&nbsp;&nbsp;
+                    </td>
+                    <td><input type="password" 
+                    		wicket:id="passwordConfirm"
+                            property="confirmPassword" 
+                            style="width:195px"
+                            onkeypress="handleEnterKey(event,this.form.signin)"/>
+                    </td>
+                </tr>
+				<tr>
+					<td colspan="2" height="35" valign="bottom" align="center">
+						<input type="submit" 
+							class="regButton" 
+							wicket:id="cancelbutton" 
+							value="Cancel"/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="submit" 
+							class="regButton" 
+							wicket:id="okbutton" 
+							id="sigin" 
+							value="Submit"
+							onkeypress="handleEnterKey(event,this.form.signin)"/>
+					</td>
+				</tr>
+            </table>
+		</form>
+		<span class="xtrasmtxt" wicket:id="signUpFeedback"/>
+	</wicket:panel>
+</body>
+</html>

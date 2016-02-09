@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.sourceforge.net/">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<link media="screen" rel="stylesheet" type="text/css"
+	href="console.css" />
+<title>Sign In Panel</title>
+</head>
+<body>
+	<wicket:panel>
+		<form name="form" wicket:id="signInForm">
+			<table border="0" cellpadding="2">
+				<tr>
+					<td class="xtrasmtxt" align="left" colspan="2" height="40"
+						valign="top"><span class="normblack">Username:</span><br />
+					<input wicket:id="username" type="text" name="username" id="username"
+						style="width:144px"
+						onkeypress="handleEnterKey(event,this.form.signin)" /></td>
+				</tr>
+				<tr>
+					<td class="xtrasmtxt" align="left" colspan="2" height="40"
+						valign="top"><span class="normblack">Password:</span><br />
+					<input wicket:id="password" type="password" name="password" id="password"
+						style="width:144px"
+						onkeypress="handleEnterKey(event,this.form.signin)" /></td>
+				</tr>
+				<tr wicket:id="rememberMeRow">
+					<td class="xtrasmtxt" align="left" colspan="2"
+						valign="top"><input wicket:id="rememberMe" type="checkbox" /> Remember Me</td>
+				</tr>
+				<tr wicket:id="tryPushRow">
+					<td class="xtrasmtxt" align="left" colspan="2" valign="top">
+						<input wicket:id="tryPush" type="checkbox" checked /> Login with VIP Push
+					</td>
+				</tr>
+				<tr>
+				    <td align="left"><img src="image/viplogo.png" alt="VIP Logo" /></td>
+					<td align="right" valign="middle">
+					<input type="submit"
+						name="signin" id="signin" value="Sign In" class="button"
+						onclick="InitBank();" onkeypress="handleEnterKey(event,this.form.signin)" />
+					</td>
+				</tr>
+			</table>
+		</form>
+		<span class="xtrasmtxt" wicket:id="signInFeedback"/>
+	</wicket:panel>
+</body>
+</html>

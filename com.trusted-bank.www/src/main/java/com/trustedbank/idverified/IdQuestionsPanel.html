@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.sourceforge.net/">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<link media="screen" rel="stylesheet" type="text/css"
+	href="console.css" />
+<title>Id Questions Panel</title>
+</head>
+<body>
+	<wicket:panel>
+		<br/>
+        To open an account, please enter the information below.
+        <br/><br/>
+		<form name="form" wicket:id="IdQuestionsForm">
+	        <table border="0" cellpadding="2" cellspacing="0" width="360">	        
+		        <tr>
+		        	<td class="infotext" align="right" width="155"><strong>First Name:</strong>&nbsp;&nbsp;</td>
+	                <td><input type="text" wicket:id="FirstName" property="FirstName" style="width:195px"/></td>
+	            </tr>	            
+	            <tr>
+		        	<td class="infotext" align="right" width="155"><strong>Last Name:</strong>&nbsp;&nbsp;</td>
+	                <td><input type="text" wicket:id="LastName" property="LastName" style="width:195px"/></td>
+	            </tr>	            
+	            <tr>
+	               	<td class="infotext" align="right" width="155"><strong>Address:</strong>&nbsp;&nbsp;</td>
+	                <td><input type="text" wicket:id="Address" property="Address" style="width:195px"/></td>
+	            </tr>	            
+	            <tr>
+	               	<td class="infotext" align="right" width="155"><strong>City:</strong>&nbsp;&nbsp;</td>
+	                <td><input type="text" wicket:id="City" property="City" style="width:195px"/></td>
+	            </tr>	            
+	            <tr>
+		        	<td class="infotext" align="right" width="155"><strong>State:</strong>&nbsp;&nbsp;</td>
+	                <td><input type="text" wicket:id="State" property="State" style="width:195px"/></td>
+	            </tr>	            
+	            <tr>
+		        	<td class="infotext" align="right" width="155"><strong>ZIP:</strong>&nbsp;&nbsp;</td>
+	                <td><input type="text" wicket:id="Zip" property="Zip" style="width:195px"/></td>
+	            </tr>	
+				<tr>
+	               	<td class="infotext" align="right" width="155"><strong>Year of Birth (YYYY) (optional):</strong>&nbsp;&nbsp;</td>
+	                <td><input type="text" wicket:id="Yob" property="Yob" size=4 style="width:195px"/></td>
+	            </tr>	                        
+	            <tr>
+	               	<td class="infotext" align="right" width="155"><strong>SSN (last 4 digits only) (optional):</strong>&nbsp;&nbsp;</td>
+	                <td><input type="text" wicket:id="Ssn" property="Ssn" size=4 style="width:195px"/></td>
+	            </tr>	
+				<tr>
+						<td colspan="2" height="35" valign="bottom" align="right"><input type="submit" class="regButton" value="Submit"/></td>
+				</tr>
+				<tr>
+					<td colspan="2" valign="bottom" align="left">
+					    <a href="http://www.idology.com/" target="_blank">
+					    	<img border="0" src="image/powered_idology.jpg" />
+					    </a>
+					</td>
+				</tr>	
+				<tr>
+					<td colspan="2" align="left">
+						<h6>
+		            		** IDology permits VeriSign to use this identity proofing solution for 
+		            		demonstration purposes pursuant to the Technical Alliance Partner Agreement 
+		            		of December 23, 2009, and its use is subject to the non-disclosure obligations 
+		            		therein.  Inquiries must be performed only by authorized VeriSign personnel.  
+		            		Any inquiry submitted to IDology will access IDology’s production databases, 
+		            		which are subject to federal privacy laws, including but not limited to GLBA 
+		            		and DPPA.  Therefore, you may perform an inquiry only on a person with that 
+		            		person’s consent – namely, only yourself, or someone who volunteered to be 
+		            		screened at the demonstration session.  
+		            		<u>Do not perform any inquiry on a celebrity, a neighbor, or any person without 
+		            		that person’s consent – it is a	violation of federal laws, which will expose 
+		            		you to civil and criminal liabilities.</u>
+	            		</h6>
+					</td>
+				</tr>	
+            </table>
+                          
+		</form>
+		<span class="xtrasmtxt" wicket:id="IdQuestionsFeedback"/>
+	</wicket:panel>
+</body>
+</html>

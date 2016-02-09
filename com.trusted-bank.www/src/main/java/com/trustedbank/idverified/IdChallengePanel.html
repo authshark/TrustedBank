@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.sourceforge.net/">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<link media="screen" rel="stylesheet" type="text/css"
+	href="console.css" />
+<title>Id Challenge Questions Panel</title>
+</head>
+<body>
+	<wicket:panel>
+		<br/>
+        Please answer the questions below. Click on "Submit" when ready.
+        <br/><br/>
+		<form name="form" wicket:id="IdChallengeForm">
+	        <table border="0" cellpadding="3" cellspacing="3" width="500">	        
+		        <tr>
+		        	<td class="infotext" align="right" width="250"><span wicket:id="FirstIdChallenge">[firstChallenge]</span>&nbsp;&nbsp;</td>
+		        	<td class="infotext" align="left" width=250>
+		        		<span valign="top" wicket:id="FirstIdAnswer">
+        					<input type="radio">answer 1</input>
+        					<input type="radio">answer 2</input>
+        					<input type="radio">answer 3</input>
+        					<input type="radio">answer 4</input>
+        					<input type="radio">answer 5</input>
+    					</span>
+		        	</td>
+	            </tr>
+	            <tr><td>&nbsp;&nbsp;</td></tr>	            
+	            <tr>
+		        	<td class="infotext" align="right" width="250"><span wicket:id="SecondIdChallenge">[secondChallenge]</span>&nbsp;&nbsp;</td>
+	                <td class="infotext" align="left" width=250>
+	                	<span valign="top" wicket:id="SecondIdAnswer">
+        					<input type="radio">answer 1</input>
+        					<input type="radio">answer 2</input>
+        					<input type="radio">answer 3</input>
+        					<input type="radio">answer 4</input>
+        					<input type="radio">answer 5</input>
+    					</span>
+	                </td>
+	            </tr>	  
+	            <tr><td>&nbsp;&nbsp;</td></tr>
+	            <tr>
+	               	<td class="infotext" align="right" width="250"><span wicket:id="ThirdIdChallenge">[thirdChallenge]</span>&nbsp;&nbsp;</td>
+	                <td class="infotext" align="left" width=250>
+	                	<span valign="top" wicket:id="ThirdIdAnswer">
+        					<input type="radio">answer 1</input>
+        					<input type="radio">answer 2</input>
+        					<input type="radio">answer 3</input>
+        					<input type="radio">answer 4</input>
+        					<input type="radio">answer 5</input>
+    					</span>
+	                </td>
+	            </tr>	            
+				<tr>
+					<td colspan="2" height="35" valign="bottom" align="center">
+						<input type="submit" class="regButton" wicket:id="cancelbutton" value="Cancel"/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="submit" class="regButton" wicket:id="okbutton" value="Submit"/>
+					</td>					
+				</tr>
+				<tr>
+					<td colspan="2" valign="bottom" align="center">
+						<img src="image/verified_72dpi_rgb.jpg" />
+					</td>
+				</tr>				
+            </table>
+		</form>
+		<span class="xtrasmtxt" wicket:id="IdChallengeFeedback"/>
+	</wicket:panel>
+</body>
+</html>

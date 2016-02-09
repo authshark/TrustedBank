@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.sourceforge.net/">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<link media="screen" rel="stylesheet" type="text/css"
+	href="console.css" />
+<title>Remove User Panel</title>
+</head>
+<body>
+<wicket:panel>
+	<form name="form" wicket:id="removeUserForm">
+                <table border="0" cellpadding="0" cellspacing="0" width="280">
+                	<tr>
+        				<td width="5">&nbsp;</td>
+        				<td width="510" valign="top" align = "left" class="infotext">
+        					<br/><br/>
+        					<span class="pageTitle">Select a User</span>
+        					<br/><br/>
+        						Select one of the users below to remove.
+        					<br/><br/><br/><br/>
+        				</td>
+      				</tr>
+      				<tr>
+        				<td width="5">&nbsp;</td>
+      					<td align="left">  
+        					<select wicket:id="userList">
+								<option>choices</option>
+							</select>
+							<br/><br/><br/><br/>
+						</td>
+	  				</tr>
+	  				<tr>
+	  					<td width="5">&nbsp;</td>
+	  					<td align="left">
+							<input type="submit" 
+								name="signin" 
+								id="signin" 
+								value="Submit" 
+								class="regButton"/>
+							<br/><br/>
+        				</td>
+     				</tr>
+                </table>
+                <br/>
+	</form>
+	<span class="xtrasmtxt" wicket:id="removeUserFeedback"/>
+</wicket:panel>
+</body>
+</html>

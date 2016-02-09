@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:wicket="http://wicket.sourceforge.net/">
+<head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+        <link media="screen" rel="stylesheet" type="text/css" href="console.css"/>
+        <title>Transfer</title>
+</head>
+
+<body>
+<wicket:panel>
+	<form name="form" wicket:id="transferForm">
+		<table width="510" border="0" cellpadding="0" cellspacing="0" class="gentable">
+			<tr class="gentable-colhead">
+				<td align="left" colspan="3" class="gentable-border">
+					Transaction Details
+				</td>
+			</tr>
+			<tr class="gentable-odd">
+				<td align="left" colspan="3">
+					<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+			    		&nbsp;&nbsp;A Verification request was sent to your registered mobile device to confirm the transfer as shown below.
+			    	<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+			    </td>
+			</tr>
+			<tr class="gentable-even">
+				<td align="right" width="150">
+					<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+					From Account:&nbsp;&nbsp;
+					<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+				</td>
+				<td align="left">
+					<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+					<div class="red">
+						<span wicket:id="fromAcct">From Account Here</span>
+					</div>
+					<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+				</td>
+			</tr>
+			<tr class="gentable-odd">
+				<td align="right" width="150">
+					<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+					To Account:&nbsp;&nbsp;
+					<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+				</td>
+				<td align="left">
+					<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+					<div class="red">
+						<span wicket:id="toAcct">To Account Here</span>
+					</div>
+					<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+				</td>
+			</tr>
+			<tr class="gentable-even">
+				<td align="right" width="150">
+					<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+					Amount:&nbsp;&nbsp;
+					<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+				</td>
+				<td align="left">
+					<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+					<div class="red">
+						<span wicket:id="amnt">Amount Here</span>
+					</div>
+					<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+				</td>
+			</tr>
+		    <tr class="gentable-odd">
+			    <td align="left" colspan="3">
+			    	<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+			    		&nbsp;&nbsp;Approve the push notification sent to your mobile device to complete this transaction.
+			    	<input type="submit" name="done" wicket:id="doneButton" class="regButton" value="Done"/>
+			    	<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div> 
+			    </td>
+		    </tr>
+		</table>
+	</form>
+	<script type="text/javascript">document.getElementById("transferPanel_transferForm").submit();</script>
+</wicket:panel>
+</body>
+</html>

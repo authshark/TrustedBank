@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:wicket="http://wicket.sourceforge.net/">
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+        <link media="screen" rel="stylesheet" type="text/css" href="console.css"/>
+    <title>Update Profile</title>
+</head>
+<body>
+<wicket:extend>
+	<table width="700" border="0" cellpadding="0" cellspacing="0">
+		<tr>
+			<td width="180" valign="top" class="sideback">
+    			<span wicket:id="loginSidebarPanel"/>
+	    		<span wicket:id="profileSidebarPanel"/>
+			</td>
+			<td width="10">&nbsp;</td>
+			<td width="510" valign="top" class="infotext">
+				<span class="pageTitle">Update Profile</span>
+				<br/><br/>
+				Select a link from Profile Settings to update your contact information, password, and <strong>VIP credential</strong> configuration.
+				<br/><br/>
+				<table width="510" border="0" cellpadding="0" cellspacing="0" class="gentable">
+    				<tr class="gentable-head">
+        				<td align="left" colspan="5" class="gentable-head">Contact Information</td>
+    				</tr>
+    				<tr class="gentable-odd">
+        				<td align="left" width="110" class="gentable-border">Name</td>
+        				<td align="left" width="400" class="gentable-border">John Doe</td>
+    				</tr>
+    				<tr class="gentable-even">
+        				<td align="left" width="110" class="gentable-border">Street Address 1</td>
+        				<td align="left" width="400" class="gentable-border">1234 Secure Street</td>
+    				</tr>
+    				<tr class="gentable-odd">
+        				<td align="left" width="110" class="gentable-border">Street Address 2</td>
+        				<td align="left" width="400" class="gentable-border">&nbsp;</td>
+    				</tr>
+    				<tr class="gentable-even">
+        				<td align="left" width="110" class="gentable-border">City</td>
+        				<td align="left" width="400" class="gentable-border">Security</td>
+    				</tr>
+    				<tr class="gentable-odd">
+        				<td align="left" width="110" class="gentable-border">State</td>
+        				<td align="left" width="400" class="gentable-border">CA</td>
+    				</tr>
+    				<tr class="gentable-even">
+        				<td align="left" width="110" class="gentable-border">Zip Code</td>
+        				<td align="left" width="400" class="gentable-border">99909</td>
+    				</tr>
+    				<tr class="gentable-odd">
+        				<td align="left" width="110" class="gentable-border">Phone</td>
+        				<td align="left" width="400" class="gentable-border">(555)555-5555</td>
+    				</tr>
+    				<tr class="gentable-even">
+        				<td align="left" width="110" class="gentable-border">Email Address</td>
+        				<td align="left" width="400" class="gentable-border"> jdoe@symantec.com</td>
+    				</tr>
+				</table>
+				<br/><br/>
+				<span wicket:id="listTokensPanel">Message or table.</span>
+				
+			</td>
+		</tr>
+	</table>
+
+	<br/>
+
+	<script>document.getElementById("menu").style.display = "block";MM_nbGroup('down', 'navbar1', 'menu_r1_c11', 'image/menu/menu_r1_c11_f3.jpg', 1);</script>
+</wicket:extend>
+
+</body>
+</html>

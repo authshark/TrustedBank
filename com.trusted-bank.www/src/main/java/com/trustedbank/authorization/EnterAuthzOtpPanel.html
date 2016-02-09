@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.sourceforge.net/">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<link media="screen" rel="stylesheet" type="text/css"
+	href="console.css" />
+<title>OTP Validation Panel</title>
+</head>
+<body>
+<wicket:panel>
+<form name="form" wicket:id="enterOtpForm">
+<table width="700" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td>&nbsp;&nbsp;</td>
+		<td class="xtrasmtxt" align="left" height="42" valign="top">
+		    <br/><br/>
+			<span class="normblack">Please enter the Six-Digit Security Code below:</span>
+			<br/><br/><br/><br/>
+			<input wicket:id="vip_securitycode" type="text" name="vip_securitycode" id="vip_securitycode"
+			style="width:144px" onkeypress="handleEnterKey(event,this.form.signin)" />
+			<br/><br/>
+		</td>
+	</tr>
+	<tr>
+		<td>&nbsp;&nbsp;</td>
+		<td colspan="2" height="35" valign="bottom" align="left">
+			<input type="submit" class="regButton" wicket:id="cancelbutton" value="Cancel"
+			onkeypress="handleEnterKey(event,this.form.signin)" />
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="submit" class="regButton" id="signin" wicket:id="okbutton" value="Submit"
+			onkeypress="handleEnterKey(event,this.form.signin)" />
+		</td>
+	</tr>
+</table>
+</form>
+	<span class="xtrasmtxt" wicket:id="enterOtpFeedback"/>
+	</wicket:panel>
+</body>
+</html>

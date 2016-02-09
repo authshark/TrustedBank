@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:wicket="http://wicket.sourceforge.net/">
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+        <link media="screen" rel="stylesheet" type="text/css" href="console.css"/>
+
+    <title>Answer Security Questions</title>
+</head>
+
+<body>
+
+<html:form action="/logon/challenge">
+    <html:hidden property="action" value="answerQA"/>
+    <table width="700" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+            <td width="180" valign="top" class="sideback">
+                <table width="180" border="0" cellpadding="0" cellspacing="0"
+                       class="infotable">
+                    <tr class="infotable-head">
+                        <td align="center" colspan="2">Secure Login
+                            Information</td>
+                    </tr>
+                    <tr class="infotable-odd">
+                        <td width="27"><img
+                                src="image/sidearrowodd.jpg"
+                                border="0"></td><td width="100%"><u>Features</u>
+                    </td>
+                    </tr>
+                    <tr class="infotable-even">
+                        <td width="27"><img
+                                src="image/sidearroweven.jpg"
+                                border="0"></td><td width="100%"><u>Security
+                        Information</u></td>
+                    </tr>
+                    <tr class="infotable-odd">
+                        <td width="27"><img
+                                src="image/sidearrowodd.jpg"
+                                border="0"></td><td width="100%"><u>FAQs</u>
+                    </td>
+                    </tr>
+                    <tr class="infotable-even">
+                        <td width="27"><img
+                                src="image/sidearroweven.jpg"
+                                border="0"></td><td width="100%"><u>Lost
+                        Tokens</u></td>
+                    </tr>
+                    <tr class="infotable-odd">
+                        <td width="27"><img
+                                src="image/sidearrowodd.jpg"
+                                border="0"></td><td width="100%"><u>Contact
+                        Us</u></td>
+                    </tr>
+                </table>
+            </td>
+            <td width="10">&nbsp;</td>
+
+            <td width="510" valign="top" class="infotext">
+                <span class="pageTitle">Answer Security Questions</span>
+                <br/>
+                
+                <br/>
+                We have detected unusual activity on your account.
+                <br/><br/>
+                To continue with the login process, please answer the security
+                questions below and click <strong>Continue</strong> to proceed.<br/><br/>
+
+                <table width="510" border="0" cellpadding="0" cellspacing="0" class="gentable">
+                    <tr class="gentable-head">
+                        <td align="left" colspan="2" class="gentable-head">Security Questions</td>
+                    </tr>
+                    <c:forEach items="${securityAnswers}" var="answer"
+                               varStatus="status">
+                        <html:hidden property="answers[${status.index}].questionId"
+                                     value="${answer.questionId}"/>
+                        <c:choose>
+                            <c:when test="${status.count % 2 == 0}">
+                                <tr class="gentable-even">
+                            </c:when>
+                            <c:otherwise>
+                                <tr class="gentable-odd">
+                            </c:otherwise>
+                        </c:choose>
+                            <td align="right" class="gentable-border" width="23%">Security Question <c:out
+                                    value="${status.count}"/>:</td>
+                            <td align="left" class="gentable-border" width="77%"><c:out value="${answer.question}"/></td>
+                        </tr>
+                        <c:choose>
+                            <c:when test="${status.count % 2 == 0}">
+                                <tr class="gentable-even">
+                            </c:when>
+                            <c:otherwise>
+                                <tr class="gentable-odd">
+                            </c:otherwise>
+                        </c:choose>
+                            <td align="right" class="gentable-border">Security Answer <c:out
+                                    value="${status.count}"/>:</td>
+                            <td align="left" class="gentable-border"><html:text property="answers[${status.index}].answer"
+                                           style="width:140px;"/></td>
+                        </tr>
+                    </c:forEach>
+                </table>
+                <br/>
+                <div align="center">
+                <html:submit value="Continue" styleClass="regButton"/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="image/vip-white.jpg"/></div>
+                <br/><br/>
+                <strong>Problems logging in?</strong> Please call us at (800)
+                555-5555 if you encounter any difficulties during the login
+                process.
+                <br/><br/><br/>
+            </td>
+
+        </tr>
+    </table>
+
+</html:form>
+</body>
+</html>

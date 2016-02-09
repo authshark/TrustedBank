@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:wicket="http://wicket.sourceforge.net/">
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+        <link media="screen" rel="stylesheet" type="text/css" href="console.css"/>
+    <title>Register Profile</title>
+</head>
+
+<body>
+<html:form action="/profile/register">
+<html:hidden property="action" value="update"/>
+
+<table width="700" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="180" valign="top" class="sideback">
+    <table width="180" border="0" cellpadding="0" cellspacing="0"
+           class="infotable">
+        <tr class="infotable-head">
+            <td align="center" colspan="2">Profile Settings</td>
+        </tr>
+        <tr class="infotable-odd">
+            <td width="27"><img src="image/sidearrowodd.jpg"
+                                border="0"></td><td width="100%"><u>Change
+            Contact Info</u></td>
+        </tr>
+        <tr class="infotable-even">
+            <td width="27"><img src="image/sidearroweven.jpg"
+                                border="0"></td><td width="100%"><u>Change
+            Password</u></td>
+        </tr>
+        <c:choose>
+            <c:when test="${empty tokens}">
+                <tr class="infotable-odd">
+                    <td width="27"><img src="image/sidearrowodd.jpg"
+                                        border="0"></td><td width="100%">
+                    <html:link
+                            action="/profile/addToken">Add
+                        Token</html:link></td>
+                </tr>
+            </c:when>
+            <c:otherwise>
+                <tr class="infotable-odd">
+                    <td width="27"><img src="image/sidearrowodd.jpg"
+                                        border="0"></td><td width="100%"><u>
+                    Remove
+                    Token</u></td>
+                </tr>
+                <tr class="infotable-even">
+                    <td width="27"><img src="image/sidearroweven.jpg"
+                                        border="0"></td><td width="100%"><u>
+                    Report Lost
+                    Token</u></td>
+                </tr>
+            </c:otherwise>
+        </c:choose>
+    </table>
+    <br/><br/>
+    <table width="180" border="0" cellpadding="0" cellspacing="0"
+           class="infotable">
+        <tr class="infotable-head">
+            <td align="center" colspan="2">Links</td>
+        </tr>
+        <tr class="infotable-odd">
+            <td width="27"><img src="image/sidearrowodd.jpg"
+                                border="0"></td><td width="100%"><u>FAQs</u>
+        </td>
+        </tr>
+        <tr class="infotable-even">
+            <td width="27"><img src="image/sidearroweven.jpg"
+                                border="0"></td><td width="100%"><u>Privacy
+            Statement</u></td>
+        </tr>
+        <tr class="infotable-odd">
+            <td width="27"><img src="image/sidearrowodd.jpg"
+                                border="0"></td><td width="100%"><u>Contact
+            Us</u></td>
+        </tr>
+    </table>
+</td>
+<td width="10">&nbsp;</td>
+<td width="510" valign="top" class="infotext">
+    <span class="pageTitle">Register Profile</span>
+    <br/>
+    
+    <br/>
+    Please take care to answer these questions as accurately as possible.
+    BizyBank may ask you these questions at a later time to better ensure your identity.
+    <br/><br/>
+    Answer the questions and click <strong>Continue</strong> to proceed.<br/><br/>
+
+    <table width="510" border="0" cellpadding="0" cellspacing="0" class="gentable">
+        <tr class="gentable-head">
+            <td align="left" colspan="2" class="gentable-head">Security Questions</td>
+        </tr>
+        <c:forEach items="${profileForm.map.answers}" var="answers"
+                   varStatus="item">
+            <c:choose>
+                <c:when test="${item.count % 2 == 0}">
+                    <tr class="gentable-even">
+                </c:when>
+                <c:otherwise>
+                    <tr class="gentable-odd">
+                </c:otherwise>
+            </c:choose>
+                <td align="right" class="gentable-border" width="23%"><strong>Question <c:out
+                        value="${item.count}"/>:</strong></td>
+                <td align="left" class="gentable-border" width="77%"><html:select property="answers[${item.index}].questionId" style="width:340px;">
+                    <html:option value="">--- Select a question ---</html:option>
+                    <html:optionsCollection name="questions" label="question"
+                                            value="questionId"/>
+                </html:select></td>
+            </tr>
+            <c:choose>
+                <c:when test="${item.count % 2 == 0}">
+                    <tr class="gentable-even">
+                </c:when>
+                <c:otherwise>
+                    <tr class="gentable-odd">
+                </c:otherwise>
+            </c:choose>
+                <td align="right" class="gentable-border">Answer <c:out
+                        value="${item.count}"/>:</td>
+                <td align="left" class="gentable-border"><html:text name="answers" property="answer" indexed="true"
+                               size="55"/></td>
+            </tr>
+        </c:forEach>
+    </table>
+    <br/>
+    <table width="510" border="0" cellpadding="0" cellspacing="0" class="gentable">
+        <tr class="gentable-head">
+            <td align="left" colspan="2" class="gentable-head">Phone Numbers</td>
+        </tr>
+        <tr class="gentable-odd">
+            <td align="right" class="gentable-border" width="23%"><strong>Home Phone:</strong></td>
+            <td align="left" class="gentable-border" width="77%"><html:text property="homePhone" size="15"/></td>
+        </tr>
+        <tr class="gentable-even">
+            <td align="right" class="gentable-border" width="23%"><strong>Work Phone:</strong></td>
+            <td align="left" class="gentable-border" width="77%"><html:text property="workPhone" size="15"/></td>
+        </tr>
+        <tr class="gentable-odd">
+            <td align="right" class="gentable-border" width="23%"><strong>Mobile Phone:</strong></td>
+            <td align="left" class="gentable-border" width="77%"><html:text property="mobilePhone" size="15"/></td>
+        </tr>
+    </table>
+    <br/>
+    <table width="510" border="0" cellpadding="0" cellspacing="0" class="gentable">
+        <tr class="gentable-head">
+            <td align="left" colspan="2" class="gentable-head">E-mail</td>
+        </tr>
+        <tr class="gentable-odd">
+            <td align="right" class="gentable-border" width="23%"><strong>E-mail address:</strong></td>
+            <td align="left" class="gentable-border" width="77%"><input type="text" name="email" size="55"/></td>
+        </tr>
+    </table>
+    <br/>
+    <table width="510" border="0" cellpadding="0" cellspacing="0" class="gentable">
+        <tr class="gentable-head">
+            <td align="left" colspan="2" class="gentable-head">Challenge type</td>
+        </tr>
+        <tr class="gentable-even">
+            <td align="left" colspan="2" class="gentable-border"><b>Please select the alternative methods that we can
+            use for authentication.</b></td>
+        </tr>
+        <c:forEach items="${requestScope.types}" var="type" varStatus="status">
+            <c:choose>
+                <c:when test="${status.count % 2 == 0}">
+                    <tr class="gentable-even">
+                </c:when>
+                <c:otherwise>
+                    <tr class="gentable-odd">
+                </c:otherwise>
+            </c:choose>
+            <td align="right" class="gentable-border" width="23%"><html:multibox property="challenge_type"><c:out value="${type.value}"/></html:multibox></td>
+            <td align="left" class="gentable-border" width="77%"><strong><c:out value="${type.label}"/></strong></td>
+        </tr>
+        </c:forEach>
+    </table>
+    <br/>
+
+    <div align="center">
+    <html:submit value="Continue" styleClass="regButton"/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="image/vip-white.jpg"/></div>
+</td>
+
+</tr>
+</table>
+<br/>
+</html:form>
+<script>document.getElementById("menu").style.display =
+        "block";MM_nbGroup('down', 'navbar1', 'menu_r1_c11', 'image/menu/menu_r1_c11_f3.jpg', 1);</script>
+</body>
+</html>

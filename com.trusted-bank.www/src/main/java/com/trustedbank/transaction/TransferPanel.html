@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:wicket="http://wicket.sourceforge.net/">
+<head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+        <link media="screen" rel="stylesheet" type="text/css" href="console.css"/>
+        <title>Transfer</title>
+</head>
+
+<body>
+<wicket:panel>
+	<form name="form" wicket:id="transferForm">
+		<table width="510" border="0" cellpadding="0" cellspacing="0" class="gentable">
+			<tr class="gentable-odd">
+				<td align="right" width="60">From:&nbsp;&nbsp;</td>
+				<td align="left">
+					<select style="width:435px;height:20px;font-size:11px" wicket:id="fromList">
+						<option>choices</option>
+					</select>
+				</td>
+			</tr>
+			<tr class="gentable-even">
+				<td align="right">To:&nbsp;&nbsp;</td>
+				<td align="left">
+					<select style="width:435px;height:20px;font-size:11px" wicket:id="toList">
+						<option>choices</option>
+					</select>
+				</td>
+			</tr>
+			<tr class="gentable-odd">
+				<td align="right">Amount:&nbsp;&nbsp;</td>
+				<td align="left">
+					<input type="text" wicket:id="amnt" />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="submit" class="regButton" value="Transfer" />					
+				</td>
+			</tr>
+			<tr class="gentable-even">
+				<td align="right">Verify By:&nbsp;&nbsp;</td>
+				<td align="left">
+					<span wicket:id="authzchoices">
+						<input type="radio" />
+					</span>
+				</td>
+			</tr>
+		</table>
+	</form>
+	<span class="xtrasmtxt" wicket:id="feedback"/>
+</wicket:panel>
+</body>
+
+</html>

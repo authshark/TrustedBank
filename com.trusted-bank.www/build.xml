@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="war" name="trustedbank" basedir=".">
+
+	<property name="final.name" value="trustedbank" />
+
+	<property name="src.main.dir" value="src/main/java" />
+	<property name="src.web.dir" value="src/webapp" />
+	
+	<property name="lib.dir" value="lib" />
+	<property name="lib-vip.dir" value="lib-vip" />
+
+	<property name="build.dir" value="target" />
+	<property name="build.main.classes" value="${build.dir}/classes" />
+	
+	<path id="build.classpath">
+		<fileset dir="${lib.dir}">
+			<include name="**/*.jar"></include>
+		</fileset>
+		<fileset dir="${lib-vip.dir}">
+			<include name="**/*.jar"></include>
+		</fileset>
+	</path>
+
+	<target name="clean" description="o Cleans up the build artifacts">
+		<delete dir="${build.dir}" failonerror="false" />
+		<delete file="${final.name}.war" failonerror="false" />
+	</target>
+	
+	<target name="init" description="o Creates all directories for building">
+		<mkdir dir="${build.dir}" />
+	</target>
+
+	<target name="compile" depends="init" description="o Compiles the Java sources">
+		<mkdir dir="${build.main.classes}" />
+		<javac destdir="${build.main.classes}" 
+			target="1.5"
+			source="1.5"
+			debug="true"
+			deprecation="true"
+			optimize="false"
+			excludes="**/package.html"
+			srcdir="${src.main.dir}"
+			classpathref="build.classpath"
+			/>
+
+		<copy todir="${build.main.classes}">
+			<fileset dir="${src.main.dir}">
+				<include name="**/*.*" />
+				<exclude name="**/*.java" />
+			</fileset>
+		</copy>
+	</target>
+
+	<!-- 
+	     war doesn't test the archive, because this apparently doens't work using
+	     Ant. Maven tests /do/ work. 
+	  -->
+	<target name="war" depends="compile" description="o Creates a WAR file for this package">
+		<war destfile="${build.dir}/${final.name}.war" 
+			webxml="${src.web.dir}/WEB-INF/web.xml"
+			excludes="**/package.html" 
+		>
+			<classes dir="${build.main.classes}"/>
+			<fileset dir="${src.web.dir}">
+				<include name="**/*"/>
+				<exclude name="**/web.xml" />
+			</fileset>
+			<lib dir="lib">
+				<exclude name="servletapi*.jar"/>
+				<exclude name="xerces*.jar" />
+				<exclude name="xml-apis*.jar" />
+				<exclude name="jwebunit*.jar" />
+				<exclude name="httpunit*.jar" />
+				<exclude name="rhino*.jar" />
+				<exclude name="jasper*.jar" />
+				<exclude name="js*.jar" />
+				<exclude name="junit*.jar" />
+				<exclude name="nekohtml*.jar" />
+				<exclude name="dom4j*.jar" />
+				<exclude name="org.mortbay.*" />
+			</lib>
+			<lib dir="lib-vip">
+				<exclude name="jsse*.jar"/>
+			</lib>
+		</war>
+	</target>
+</project>

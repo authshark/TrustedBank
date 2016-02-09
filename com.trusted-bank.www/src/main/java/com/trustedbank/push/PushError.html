@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:wicket="http://wicket.sourceforge.net/">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<link media="screen" rel="stylesheet" type="text/css" href="console.css" />
+<title>Home</title>
+</head>
+
+<body bgcolor="#FFFFFF" link="#333333" text="#333333" vlink="#333333"
+	alink="#CCCCCC">
+<wicket:extend>
+<table cellspacing="2" cellpadding="2" border="0" width="700">
+	<tr class="xtrasmtxtBl-White">
+		<td width="165" bgcolor="#004488" align="center">
+			<div align="center">Personal Banking</div>
+		</td>
+		<td width="165" bgcolor="#004488" align="center">
+			<div align="center">Small Business</div>
+		</td>
+		<td width="165" bgcolor="#004488" align="center">
+			<div align="center">Corporate Banking</div>
+		</td>
+		<td width="165" bgcolor="#004488" align="center">
+			<div align="center">Investment Services</div>
+		</td>
+	</tr>
+	<tr>
+		<td rowspan="2" valign="top" bgcolor="#CBD1E2">
+			<div align="center"><img src="image/signin2.gif" alt="" width="163" height="33" border="0" />
+				<br />
+			</div>
+			<table cellpadding="3" width="165">
+				<tr>
+					<td valign="top">
+						<span wicket:id="signInPanel"/>
+						<div align="center"><img src="image/spacer.gif" width="1" height="5" alt="" /></div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label wicket:id="pushUserMessage" class="xtrasmtxt">Message</label>
+						<div align="center"><img src="image/spacer.gif" width="1" height="5" alt="" /></div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="xtrasmtxt">
+							<label wicket:id="retryMessage">Message</label>
+							<br />
+							<br />
+							&nbsp;<a wicket:id="retryPush">Send it again </a> or 
+							<br />
+							&nbsp;<a wicket:id="goToLogout">Use another option to Sign In</a>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<div align="center"><br />
+				<img src="image/signin3.gif" width="163" height="35" alt="" />
+				<br /><br />
+				<select name="OtherServices" style="width:150px">
+					<option value="1">Online Investing</option>
+					<option value="2">Mortgage Account</option>
+					<option value="3">-- Other Services --</option>
+				</select>
+			</div>
+			<br />
+			<div align="right"><input type="button" class="button" name="other" id="other" value="    Go    " />
+				&nbsp;&nbsp;
+			</div>
+		</td>
+		<td colspan="2" valign="top" style="padding-left:10px;">
+			<table border="0" align="right" cellpadding="1" class="xtrasmtxt">
+				<tr>
+					<td>
+						<img src="image/learnmore.gif" alt="" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<strong>Checking and Savings</strong>
+						<br />
+						<span class="normblue">
+							Checking Accounts | Savings Accounts | CDs | Check Cards
+							<br /><br />
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<strong>Credit Cards and Prepaid Cards</strong>
+						<br />
+						<span class="normblue">
+							Credit Cards | Gift Cards | Your Online Credit Card Account | Credit Protection
+							<br /><br />
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<strong>Loans and Credit Lines</strong>
+						<br />
+						<span class="normblue">
+							Home Mortgage | Home Equity Loans | Refinance | Student Loans |
+							<br />
+							Auto Loans | Personal Loans | Personal Lines of Credit
+							<br /><br />
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<strong>Investments and Financial Management</strong>
+						<br />
+						<span class="normblue">
+							Investment Services | IRAs | Mutual Funds | Brokerage | Insurance |
+							<br />
+							Private Consulting | Trust Services | 529 College Savings Plan |
+							<br />
+							Learn about Investing
+							<br /><br />
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<strong>Financial Planning</strong>
+						<br />
+						<span class="normblue">
+							Saving and Budgeting | Tools and Calculators | Credit Management |
+							<br />
+							Fraud Protection | Retirement | Investing | Estates | Taxes | Insurance
+							<br /><br />
+						</span>
+						</td>
+				</tr>
+			</table>
+		</td>
+		<td valign="top" bgcolor="#8B9DBE">
+			<div align="center"><img src="image/trustedbank/side_trustedbank.jpg" align="top" alt="" />
+				<br />
+				<!-- <div align="center"><img src="image/side.jpg" align="top" alt="" /><br /> -->
+				<br />
+				<span class="xtrasmtxt">
+					<span class="white">
+						View Today's Rates
+					</span>
+				</span>
+				<br /><br />
+				<select name="Rates" style="width:148px">
+					<option value="1">Mortgage</option>
+					<option value="2">Checking</option>
+					<option value="3">Savings</option>
+					<option value="4">CDs</option>
+					<option value="5">Home Equity</option>
+					<option value="6">Personal Loans</option>
+					<option value="7">----- Other Rates ------</option>
+				</select>
+				<br /><br />
+				<div align="right"><input type="button" class="button" name="other2" id="other2" value="    Go    " />
+					&nbsp;&nbsp;
+				</div>
+				<br />
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td height="120" colspan="3" bgcolor="#4D6191">
+			<div align="center">
+				<img src="image/ad1.jpg" align="middle" alt="" />
+				&nbsp;&nbsp;&nbsp;
+				<img src="image/ad2.jpg" align="middle" alt="" />
+			</div>
+		</td>
+	</tr>
+</table>
+</wicket:extend>
+</body>
+</html>

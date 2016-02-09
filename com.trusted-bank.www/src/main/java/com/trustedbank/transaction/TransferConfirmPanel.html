@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:wicket="http://wicket.sourceforge.net/">
+<head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+        <link media="screen" rel="stylesheet" type="text/css" href="console.css"/>
+        <title>Transfer</title>
+</head>
+
+<body>
+<wicket:panel>
+	<form name="form" wicket:id="transferForm">
+		<table width="510" border="0" cellpadding="0" cellspacing="0" class="gentable">
+			<tr class="gentable-colhead">
+				<td align="left" colspan="3" class="gentable-border">
+					Transaction Details
+				</td>
+			</tr>
+			<tr class="gentable-odd">
+				<td align="left" colspan="3">
+					<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+			    		&nbsp;&nbsp;An automated call to your registered phone was initiated to confirm the transfer as shown below.
+			    	<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+			    </td>
+			</tr>
+			<tr class="gentable-even">
+				<td align="right" width="200">
+					<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+						From Account:&nbsp;&nbsp;
+					<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+				</td>
+				<td align="left">
+					<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+					<div class="red">
+						<span wicket:id="fromAcct">From Account Here</span>
+					</div>	
+					<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+				</td>
+			</tr>
+			<tr class="gentable-odd">
+				<td align="right" width="200">
+					<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+						To Account:&nbsp;&nbsp;
+					<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+				</td>
+				<td align="left">
+					<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+					<div class="red">
+						<span wicket:id="toAcct">To Account Here</span>
+					</div>
+					<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+				</td>
+			</tr>
+			<tr class="gentable-even">
+				<td align="right" width="200">
+					<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+						Amount:&nbsp;&nbsp;
+					<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+				</td>
+				<td align="left">
+					<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+					<div class="red">
+						<span wicket:id="amnt">Amount Here</span>
+					</div>
+					<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+				</td>
+			</tr>
+			<tr class="gentable-odd">
+			    <td align="right" width="200">
+			    	<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+			    		Confirmation code:&nbsp;&nbsp;
+			    	<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+			    </td>
+			    <td align="left">
+			    	<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+			    	<div class="red">
+				    	<span wicket:id="passcode">OTP Here</span>
+					</div>
+					<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+			    </td>
+		    </tr>
+		    <tr class="gentable-even">
+			    <td align="left" colspan="3">
+			    	<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+			    		&nbsp;&nbsp;Enter the confirmation code displayed above on the phone when prompted.
+			    	<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+			    </td>
+		    </tr>
+		    <tr class="gentable-odd">
+			    <td align="left" colspan="3">
+			    	<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+			    	<div class="red">
+			    		&nbsp;&nbsp;Listen carefully for the transaction details, and only enter the confirmation code if they match the values displayed above
+			    	</div>
+			    	<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+			    </td>
+		    </tr>
+		    <tr class="gentable-even">
+		    	<td align="left" colspan="3">
+			    	<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+			    		&nbsp;&nbsp;Click on the button when Done or wait for the confirmation page that will be displayed automatically in approximately 1 minute.
+			    		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			    	<input type="submit" class="regButton" value="Done" />
+			    	<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+			    </td>
+		    </tr>
+		    <tr class="gentable-odd">
+				<td align="right" width="200">
+		    		<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+		    		Time remaining:&nbsp;&nbsp;
+		    		<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+		    	</td>
+		    	<td align="left">
+		    		<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+		    		<span id="countdown"></span>			
+		    		<div align="center"><img src="image/spacer.gif" width="1" height="10" alt="" /></div>
+		    	</td>
+			</tr>
+		</table>
+	</form>
+	<script type="text/javascript" src="/script/jquery.min.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function() {
+			
+			/* delay function */
+			jQuery.fn.delay = function(time,func){
+				return this.each(function(){
+					setTimeout(func,time);
+				});
+			};
+			
+			
+			jQuery.fn.countDown = function(settings,to) {
+				settings = jQuery.extend({
+					startFontSize: '16px',
+					endFontSize: '10px',
+					duration: 1000,
+					startNumber: 10,
+					endNumber: 0,
+					callBack: function() { }
+				}, settings);
+				return this.each(function() {
+					
+					if(!to && to != settings.endNumber) { to = settings.startNumber; }
+					
+					//set the countdown to the starting number
+					$(this).text(to).css('fontSize',settings.startFontSize);
+					
+					//loopage
+					$(this).animate({
+						'fontSize': settings.endFontSize
+					},settings.duration,'',function() {
+						if(to > settings.endNumber + 1) {
+							$(this).css('fontSize',settings.startFontSize).text(to - 1).countDown(settings,to - 1);
+						}
+						else
+						{
+							settings.callBack(this);
+						}
+					});
+							
+				});
+			};
+			
+			$('#countdown').countDown({
+				startNumber: 60,
+				callBack: function(me) {
+					$("#transferPanel_transferForm").submit();
+				}
+			});		
+		});
+	</script>	
+<span class="xtrasmtxt" wicket:id="feedback"/>
+</wicket:panel>
+</body>
+
+</html>
